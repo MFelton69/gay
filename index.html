@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Question</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .image-container div {
+            text-align: center;
+        }
+        img {
+            width: 300px;
+            height: 300px;
+            object-fit: cover;
+        }
+        .answer-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .answer-btn:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+ <h1>Who would you choose?</h1>
+    <form id="testForm">
+        <div class="image-container">
+            <div>
+                <img src="image1.jpg" alt="Option 1">
+                <br>
+                <input type="radio" name="option" value="gay.html" required> Option 1
+            </div>
+            <div>
+                <img src="image2.jpg" alt="Option 2">
+                <br>
+                <input type="radio" name="option" value="gay2.html" required> Option 2
+            </div>
+        </div>
+        <button type="submit" class="answer-btn">Answer</button>
+    </form>
+
+    <script>
+        document.getElementById('testForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent the form from submitting the traditional way
+            const selectedOption = document.querySelector('input[name="option"]:checked').value;
+            window.location.href = selectedOption; // Redirect to the chosen page
+        });
+    </script>
+</body>
+</html>
